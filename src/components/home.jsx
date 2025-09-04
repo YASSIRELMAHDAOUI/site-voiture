@@ -39,7 +39,7 @@ const Home = () => {
       <nav className="bg-gray-800 bg-opacity-70 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center p-5">
           <div className="text-3xl font-extrabold text-blue-400">
-            Car <span className="text-white">Rental</span> 🇲🇦
+            Car <span className="text-white">YASSIR</span> 🇲🇦
           </div>
           <div className="space-x-6">
             <Link 

@@ -28,12 +28,19 @@ function Detail() {
         </p>
 
         <p className="text-white mb-6">{car.desc}</p>
-        
+        <div className=" flex gap-4">
         <Link to="/">
           <button className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105">
             Retour à la page d'accueil
           </button>
+           
         </Link>
+        <Link to='/reservation'>
+        <button className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white px-8 py-3 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105">
+            Reserver maintenant
+          </button>
+          </Link>
+          </div>
       </div>
     </div>
   );
