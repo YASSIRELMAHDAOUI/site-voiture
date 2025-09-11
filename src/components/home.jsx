@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import { FaCar, FaTaxi, FaBus, FaTruck, FaMotorcycle } from "react-icons/fa";
-import { cars } from "./data"; // Assure-toi que tes images sont correctement importées
+import { cars } from "./data"; // Vérifie bien que tes voitures sont importées
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Import de la vidéo depuis assets
+import marrakechVideo from "../assets/videpp.mp4";
 
 const Home = () => {
-  // Paramètres pour le slider des logos
+  // Liste des icônes pour le slider
   const logos = [
     { icon: <FaCar size={50} className="text-blue-400" /> },
     { icon: <FaTaxi size={50} className="text-yellow-400" /> },
@@ -20,6 +22,7 @@ const Home = () => {
     { icon: <FaBus size={50} className="text-green-400" /> },
   ];
 
+  // Paramètres du slider
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -39,9 +42,9 @@ const Home = () => {
       <nav className="bg-gray-800 bg-opacity-70 backdrop-blur-sm shadow-lg sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center p-5">
           <div className="text-3xl font-extrabold text-blue-400">
-            Car <span className="text-white">YASSIR</span> 🇲🇦
+            Car <span className="text-white">YASSIR</span> .🇲🇦
           </div>
-          <div className="space-x-6">
+          <div>
             <Link 
               to="/contact" 
               className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 shadow-md font-semibold"
@@ -52,13 +55,25 @@ const Home = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div 
-        className="relative h-96 bg-cover bg-center flex items-center justify-center text-center p-4" 
-        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1549399528-a4ad1041b37f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3")' }}
-      >
+      {/* Hero Section avec vidéo */}
+      <div className="relative h-[32rem] flex items-center justify-center text-center p-4 overflow-hidden">
+        {/* Vidéo en background */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={marrakechVideo} type="video/mp4" />
+          Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        {/* Overlay sombre */}
         <div className="absolute inset-0 bg-black opacity-60"></div>
-        <div className="relative z-10">
+
+        {/* Texte au-dessus */}
+        <div className="relative z-10 max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-down">
             Découvrez Votre Prochaine Aventure à Marrakech
           </h1>
@@ -85,21 +100,23 @@ const Home = () => {
         </Slider>
       </div>
 
-      {/* Cars Section */}
+      {/* Section des voitures */}
       <div id="car-list-section" className="container mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold text-center text-blue-400 mb-12">Nos Véhicules Disponibles</h2>
+        <h2 className="text-4xl font-bold text-center text-blue-400 mb-12">
+          Nos Véhicules Disponibles
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {cars.map((car) => (
             <div
               key={car.id}
               className="bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden shadow-xl 
-                         transform hover:scale-102 hover:shadow-2xl transition duration-300 ease-in-out 
+                         transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out 
                          flex flex-col h-full"
             >
               <img
-                src={car.img} 
+                src={car.img}
                 alt={car.title}
-                className="w-full h-56 object-cover object-center rounded-t-xl" 
+                className="w-full h-56 object-cover object-center rounded-t-xl"
               />
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold text-white mb-2">{car.title}</h3>
