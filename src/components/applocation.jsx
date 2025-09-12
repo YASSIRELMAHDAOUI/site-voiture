@@ -15,7 +15,6 @@ const Applocation = () => {
         <Route path="/contact" element={<Contact/>} /> 
         <Route path="/details/:id" element={<Detail/>} />
         <Route path='/reservation' element={<Reserver/>}/>
-
       </Routes>
     </Router>
   );

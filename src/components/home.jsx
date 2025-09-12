@@ -5,6 +5,7 @@ import { FaCar, FaTaxi, FaBus, FaTruck, FaMotorcycle } from "react-icons/fa";
 import { cars } from "./data"; // Vérifie bien que tes voitures sont importées
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { RiAdminLine } from "react-icons/ri";
 
 // Import de la vidéo depuis assets
 import marrakechVideo from "../assets/videpp.mp4";
@@ -36,112 +37,113 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-black min-h-screen text-gray-100 font-sans">
+<div className="bg-gradient-to-br from-gray-950 via-gray-900 to-black min-h-screen text-gray-100 font-sans">
+  
+  {/* Navbar */}
+  <nav className="fixed w-full z-50 bg-gray-900/40 backdrop-blur-md border-b border-gray-700/30 shadow-lg">
+    <div className="container mx-auto flex justify-between items-center py-4 px-6">
+      <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+        Car <span className="text-white">YASSIR</span> .🇲🇦
+      </div>
+      <Link to="/admin">
+          <div className="flex items-center gap-2">
+          <span className="text-blue-500 text-xl">
+               <RiAdminLine />
+          </span>
+         <span className="text-gray-200 font-medium">Admin</span>
+    </div>
+      </Link>
       
-      {/* Navbar */}
-      <nav className="bg-gray-800 bg-opacity-70 backdrop-blur-sm shadow-lg sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center p-5">
-          <div className="text-3xl font-extrabold text-blue-400">
-            Car <span className="text-white">YASSIR</span> .🇲🇦
-          </div>
-          <div>
-            <Link 
-              to="/contact" 
-              className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 shadow-md font-semibold"
-            >
-              Contact Us
+      <Link 
+        to="/contact" 
+        className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 
+                   text-white rounded-full font-semibold shadow-md 
+                   hover:shadow-xl hover:scale-105 transition duration-300"
+      >
+        Contact Us
+      </Link>
+    </div>
+  </nav>
+
+  {/* Hero */}
+  <div className="relative h-[36rem] flex items-center justify-center text-center overflow-hidden">
+    <video
+      className="absolute inset-0 w-full h-full object-cover"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source src={marrakechVideo} type="video/mp4" />
+    </video>
+
+    {/* Overlay gradient */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-black/30"></div>
+
+    {/* Texte */}
+    <div className="relative z-10 max-w-3xl px-6 animate-fade-in-up">
+      <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 drop-shadow-lg">
+        Découvrez Votre Prochaine Aventure à Marrakech
+      </h1>
+      <p className="text-lg md:text-xl text-gray-300 mb-8">
+        Louez la voiture parfaite pour explorer les merveilles du Maroc.
+      </p>
+      <a
+        href="#car-list-section"
+        className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 
+                   text-black rounded-full text-lg font-bold 
+                   hover:scale-105 shadow-lg hover:shadow-yellow-500/40 transition"
+      >
+        Voir Nos Voitures
+      </a>
+    </div>
+  </div>
+
+  {/* Cartes voitures */}
+  <div id="car-list-section" className="container mx-auto py-20 px-6">
+    <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
+      Nos Véhicules Disponibles
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      {cars.map((car) => (
+        <div
+          key={car.id}
+          className="bg-gray-900/80 border border-gray-700 rounded-2xl overflow-hidden shadow-xl 
+                     transform hover:-translate-y-2 hover:shadow-2xl transition duration-300 ease-in-out 
+                     flex flex-col h-full"
+        >
+          <img
+            src={car.img}
+            alt={car.title}
+            className="w-full h-56 object-cover rounded-t-xl"
+          />
+          <div className="p-6 flex flex-col flex-grow">
+            <h3 className="text-2xl font-bold text-white mb-2">{car.title}</h3>
+            <p className="text-gray-400 text-sm mb-4 flex-grow">{car.desc}</p>
+            <div className="flex justify-between items-center mb-4">
+              <p className="text-blue-400 text-xl font-bold">{car.price}</p>
+              <span className="text-gray-500 text-sm">/ jour</span>
+            </div>
+            <Link to={`/details/${car.id}`} className="mt-auto">
+              <button className="w-full bg-gradient-to-r from-blue-500 to-purple-600 
+                                 hover:from-blue-600 hover:to-purple-700 
+                                 text-white font-semibold py-3 px-4 rounded-lg 
+                                 transition duration-300 shadow-md hover:shadow-blue-500/40">
+                Voir Détail
+              </button>
             </Link>
           </div>
         </div>
-      </nav>
-
-      {/* Hero Section avec vidéo */}
-      <div className="relative h-[32rem] flex items-center justify-center text-center p-4 overflow-hidden">
-        {/* Vidéo en background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src={marrakechVideo} type="video/mp4" />
-          Votre navigateur ne supporte pas la vidéo.
-        </video>
-
-        {/* Overlay sombre */}
-        <div className="absolute inset-0 bg-black opacity-60"></div>
-
-        {/* Texte au-dessus */}
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-down">
-            Découvrez Votre Prochaine Aventure à Marrakech
-          </h1>
-          <p className="text-xl text-gray-300 mb-8 animate-fade-in-up">
-            Louez la voiture parfaite pour explorer les merveilles du Maroc.
-          </p>
-          <a
-            href="#car-list-section"
-            className="px-8 py-4 bg-yellow-500 text-gray-900 rounded-full text-lg font-bold hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
-          >
-            Voir Nos Voitures
-          </a>
-        </div>
-      </div>
-
-      {/* Slider des logos */}
-      <div className="py-10 bg-gray-900">
-        <Slider {...sliderSettings}>
-          {logos.map((logo, index) => (
-            <div key={index} className="flex justify-center items-center">
-              {logo.icon}
-            </div>
-          ))}
-        </Slider>
-      </div>
-
-      {/* Section des voitures */}
-      <div id="car-list-section" className="container mx-auto py-16 px-4">
-        <h2 className="text-4xl font-bold text-center text-blue-400 mb-12">
-          Nos Véhicules Disponibles
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {cars.map((car) => (
-            <div
-              key={car.id}
-              className="bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden shadow-xl 
-                         transform hover:scale-105 hover:shadow-2xl transition duration-300 ease-in-out 
-                         flex flex-col h-full"
-            >
-              <img
-                src={car.img}
-                alt={car.title}
-                className="w-full h-56 object-cover object-center rounded-t-xl"
-              />
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold text-white mb-2">{car.title}</h3>
-                <p className="text-gray-400 text-sm mb-4 flex-grow">{car.desc}</p>
-                <div className="flex justify-between items-center mb-4">
-                  <p className="text-blue-400 text-xl font-bold">{car.price}</p>
-                  <span className="text-gray-500 text-sm">/ jour</span>
-                </div>
-                <Link to={`/details/${car.id}`} className="mt-auto">
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg 
-                                     transition duration-300 ease-in-out transform hover:-translate-y-1 shadow-md">
-                    Voir Détail
-                  </button>
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 bg-opacity-70 text-gray-400 text-center p-6 mt-12">
-        <p>&copy; {new Date().getFullYear()} Car Rental. Tous droits réservés. | Marrakech, Maroc.</p>
-      </footer>
+      ))}
     </div>
+  </div>
+
+  {/* Footer */}
+  <footer className="bg-gradient-to-r from-gray-900 to-black text-gray-400 text-center p-6 mt-12 border-t border-gray-700">
+    <p>&copy; {new Date().getFullYear()} Car Rental. Tous droits réservés. | Marrakech, Maroc.</p>
+  </footer>
+</div>
+
   );
 };
 

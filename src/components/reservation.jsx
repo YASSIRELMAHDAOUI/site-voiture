@@ -77,7 +77,7 @@ function Reserver() {
               placeholder="Votre nom"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border border-gray-300 p-2 rounded-md text-black"
+              className="w-full border border-gray-300 p-2 rounded-md text-white"
             />
           </div>
 
@@ -97,7 +97,7 @@ function Reserver() {
               placeholder="exemple@mail.com"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border border-gray-300 p-2 rounded-md text-black"
+              className="w-full border border-gray-300 p-2 rounded-md text-white"
             />
           </div>
 
@@ -117,7 +117,7 @@ function Reserver() {
               placeholder="06 12 34 56 78"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full border border-gray-300 p-2 rounded-md text-black"
+              className="w-full border border-gray-300 p-2 rounded-md text-white"
             />
           </div>
 
@@ -126,7 +126,7 @@ function Reserver() {
             <div className="relative">
               <label
                 htmlFor="start_date"
-                className="block text-gray-200 font-semibold mb-2"
+                className="block text-white font-semibold mb-2"
               >
                 Date de début
               </label>
@@ -137,9 +137,9 @@ function Reserver() {
                 required
                 value={formData.start_date}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-sm hover:shadow-md"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-sm hover:shadow-md"
               />
-              <span className="absolute right-3 top-10 text-gray-400 pointer-events-none">
+              <span className="absolute right-3 top-10 text-white pointer-events-none">
                 📅
               </span>
             </div>
@@ -158,7 +158,7 @@ function Reserver() {
                 required
                 value={formData.end_date}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-sm hover:shadow-md"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200 shadow-sm hover:shadow-md"
               />
               <span className="absolute right-3 top-10 text-gray-400 pointer-events-none">
                 📅
