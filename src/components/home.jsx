@@ -15,7 +15,7 @@ import { FaWhatsappSquare } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookSquare } from "react-icons/fa";
 const Home = () => {
-  // Liste des icônes pour le slider
+  
   const logos = [
     { icon: <SiRenault size={50} className="text-blue-400" /> },
     { icon: <SiFerrarinv size={50} className="text-yellow-400" /> },
@@ -27,7 +27,6 @@ const Home = () => {
     { icon: <SiPeugeot size={50} className="text-green-400" /> },
   ];
 
-  // Paramètres du slider
   const sliderSettings = {
     dots: false,
     infinite: true,
