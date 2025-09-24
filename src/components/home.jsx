@@ -115,7 +115,7 @@ const Home = () => {
 
       {/* Cartes voitures */}
       <div id="car-list-section" className="container mx-auto py-20 px-6">
-        <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
+        <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-400 mb-12">
           Nos Véhicules Disponibles
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
@@ -202,9 +202,8 @@ const Home = () => {
     </div>
   </div>
 
-  {/* Bottom bar */}
   <div className="border-t border-gray-700 mt-10 py-4 text-center text-gray-500 text-sm">
-    &copy; {new Date().getFullYear()} Car YASSIR. Tous droits réservés. | Marrakech, Maroc.
+    &copy; {new Date().getFullYear()} <div className="text-blue-500 flex justify-center font-bold gap-1">Car <div className="text-white">YASSIR</div> <div className="text-purple-700">.Ma</div></div> Tous droits réservés. | Marrakech, Maroc.
   </div>
 </footer>
     </div>

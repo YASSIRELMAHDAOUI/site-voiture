@@ -5,6 +5,7 @@ import Home from './home';
 import Contact from './contact';
 import Detail from './details';
 import Reserver from './reservation';
+import Admin from './admin';
 
 
 const Applocation = () => {
@@ -15,6 +16,7 @@ const Applocation = () => {
         <Route path="/contact" element={<Contact/>} /> 
         <Route path="/details/:id" element={<Detail/>} />
         <Route path='/reservation' element={<Reserver/>}/>
+        <Route path='/admin' element={<Admin/>}/>
       </Routes>
     </Router>
   );

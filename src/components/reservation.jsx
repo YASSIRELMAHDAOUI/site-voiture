@@ -33,9 +33,10 @@ function Reserver() {
   return (
     <div className="bg-gray-900 p-6">
       <div className="max-w-lg mx-auto p-6 text-white rounded-lg shadow-md mt-10 bg-gray-800">
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          Réserver une voiture
-        </h2>
+        <h2 className="text-2xl font-bold mb-6 text-center border-transparent rounded-4xl p-4 bg-gradient-to-r from-blue-500 to-purple-500 w-70 mx-auto">
+  Réserver une voiture
+</h2>
+
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           {/* Choisir voiture */}
