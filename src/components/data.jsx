@@ -5,12 +5,16 @@ import MercedesC from "../assets/mercedes.jpg";
 import Peugeot208 from "../assets/peugeot.jpg";
 import RenaultClio from "../assets/renault.png";
 import HyundaiTucson from "../assets/hyundai.jpg";
-import KiaSportage from "../assets/kia.jpg";
 import VWGolf from "../assets/volkswagen.png";
 import ToyotaCorolla from "../assets/toyota.jpg";
-
+import KiaSportage from "../assets/kia.jpg";
 export const cars = [
-    { id: 1, title: "DS4", img: DS4, desc: "DS4, élue plus belle voiture de l’année", price: "25000$" },
+    { id: 1,
+         title: "DS4",
+          img: DS4, 
+          desc: "DS4, élue plus belle voiture de l’année", 
+          price: "25000$" }
+          ,
     { id: 2, title: "BMW X5", img: BMWX5, desc: "Luxueuse et puissante", price: "60000$" },
     { id: 3, title: "Audi A4", img: AudiA4, desc: "Élégance allemande", price: "45000$" },
     { id: 4, title: "Mercedes C-Class", img: MercedesC, desc: "Confort premium", price: "55000$" },
