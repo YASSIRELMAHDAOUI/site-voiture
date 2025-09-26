@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function AdminModern() {
+function Admin() {
   return (
     <div className="flex h-screen bg-gray-100 ">
       {/* Sidebar */}
       <aside className="w-64 bg-gray-800 text-white flex flex-col p-6">
         <h1 className="text-2xl font-bold mb-8"> Admin</h1>
         <nav className="flex flex-col gap-4">
-          <a href="#" className="hover:bg-white/20 rounded px-3 py-2">Listes Réservations</a>
-          <a href="#" className="hover:bg-white/20 rounded px-3 py-2">Listes Voitures</a>
+        <Link  to='/reservationliste' className="hover:bg-white/20 rounded px-3 py-2" >Liste reservations</Link>
+        <Link  to='/listevoiture' className="hover:bg-white/20 rounded px-3 py-2" >Liste voitures</Link>
+
         </nav>
       </aside>
 
@@ -30,4 +31,4 @@ function AdminModern() {
   );
 }
 
-export default AdminModern;
+export default Admin;

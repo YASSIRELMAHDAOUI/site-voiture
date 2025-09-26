@@ -49,7 +49,6 @@ const Home = () => {
 
           {/* Menu links desktop */}
           <ul className="hidden md:flex gap-8 text-gray-200 font-medium">
-            <li><Link to="/contact" className="hover:text-blue-400 transition">Contact</Link></li>
             <li className="flex items-center gap-1 hover:text-blue-400 transition">
               <RiAdminLine /> <Link to="/admin">Admin</Link>
             </li>
